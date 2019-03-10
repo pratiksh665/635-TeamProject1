@@ -17,6 +17,7 @@ public class SkunkApp
 		Die dieObj = new Die(preProgrammedRoll);
 		StdOut.println("Using the dice object to perform the preprogrammed roll");	
 		dieObj.roll();
+		StdOut.println("Die object's pre programmed roll: " + dieObj.getLastRoll());
 		StdOut.println("Using the dice object to print out the pre programmed roll's value: " + diceObj.getLastRoll());	
 
 		

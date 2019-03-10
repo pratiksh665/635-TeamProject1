@@ -83,7 +83,7 @@ public class Die
 		{
 			       
 			this.lastRoll= this.programmedRoll[arrayIndex];
-			System.out.println("Programmed roll's value: " + lastRoll);
+			//System.out.println("Programmed roll's value: " + lastRoll);
 			
 			arrayIndex++;
 			
