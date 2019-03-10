@@ -7,6 +7,9 @@ public class Die
 	//-------------------------TP 1.1 changes--------------------------------------------------//
 	private int[] programmedRoll; // stores user input of preProgrammedDieRolls
 	private boolean isItARandomRoll; // controls alternative execution of the roll method
+	private boolean loaded;
+	private int[] loadedDieValues;
+	private int loadedCounter;
 	private int arrayIndex;
 	//-------------------------TP 1.1 changes--------------------------------------------------//
 	
@@ -45,6 +48,29 @@ public class Die
 	{
 		return this.lastRoll;
 	}
+	
+	
+	
+/* Anna Code:  Same logic, different syntax
+ * public void roll() 
+	{
+		if (!loaded) {
+			lastRoll = (int) (Math.random() * 6 + 1);
+		} else if (loaded) {
+			loadedRoll();
+		}
+	}
+	
+	public void loadedRoll() {
+		lastRoll = loadedDieValues[loadedCounter];
+		
+		//if last value in array, start over; else go to next value
+		loadedCounter = (loadedCounter >= loadedDieValues.length) ? 0 : loadedCounter++;
+	}
+ * 
+ * 
+ * 
+ */
 
 	public void roll() // note how this changes Die's state, but doesn't return anything
 	{
@@ -66,8 +92,13 @@ public class Die
 				arrayIndex = 0; //reset the array index variable
 			}
 		}
+
+		
 		//-------------------------TP 1.1 changes--------------------------------------------------//
 	}
+	
+	
+	
 	
 	@Override
 	public String toString() // this OVERRIDES the default Object.toString()
