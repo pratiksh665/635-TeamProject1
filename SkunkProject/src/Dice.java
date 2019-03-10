@@ -18,6 +18,13 @@ public class Dice
 	private int lastRoll;
 	private Die die1;
 	private Die die2;
+	
+	//-------------------------TP 1.1 changes--------------------------------------------------//
+	private int[] roll; // stores user input of preProgrammedDieRolls
+	private boolean isItARandomRoll = false; // controls alternative execution of the roll method
+	//-------------------------TP 1.1 changes--------------------------------------------------//
+	
+	
 
 	// Constructors (object initializers) also can be declared anywhere
 	// Convention: after instance fields/variables
@@ -37,7 +44,7 @@ public class Dice
 		this.die1 = die1;
 		this.die2 = die2;
 	}
-
+		
 	// Instance methods can also be declared anywhere
 	// Convention: after constructors
 
@@ -50,7 +57,6 @@ public class Dice
 	{
 		// roll each of die1, die2, sum their last rolls,
 		// then set Dice.lastRoll to this value
-
 		die1.roll();
 		die2.roll();
 		this.lastRoll = die1.getLastRoll() + die2.getLastRoll();
