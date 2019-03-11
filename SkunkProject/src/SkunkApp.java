@@ -12,14 +12,17 @@ public class SkunkApp
 		Dice diceObj = new Dice();
 		StdOut.println("Using the dice object to print out the random roll's value: " + diceObj.getLastRoll());	
 		
+
 		int[] preProgrammedRoll = {1,2};
 		StdOut.println("Updating the reference pointer of the object variable to execute a new constructor");
-		Die dieObj = new Die(preProgrammedRoll);
+		Die progDie1 = new Die(preProgrammedRoll);
+		Die progDie2 = new Die(preProgrammedRoll);
+		Dice progDice = new Dice(progDie1, progDie2);
 		StdOut.println("Using the dice object to perform the preprogrammed roll");	
-		dieObj.roll();
-		StdOut.println("Die object's pre programmed roll: " + dieObj.getLastRoll());
-		StdOut.println("Using the dice object to print out the pre programmed roll's value: " + diceObj.getLastRoll());	
-
+		progDice.roll();
+		//Expected value = 2; 1 + 1 = 2
+		StdOut.println("Using the dice object to print out the pre programmed roll's value: " + progDice.getLastRoll());	
+		
 		
 	}
 
