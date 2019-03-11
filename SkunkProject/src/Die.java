@@ -7,9 +7,6 @@ public class Die
 	//-------------------------TP 1.1 changes--------------------------------------------------//
 	private int[] programmedRoll; // stores user input of preProgrammedDieRolls
 	private boolean isItARandomRoll; // controls alternative execution of the roll method
-	private boolean loaded;
-	private int[] loadedDieValues;
-	private int loadedCounter;
 	private int arrayIndex;
 	//-------------------------TP 1.1 changes--------------------------------------------------//
 	
@@ -17,7 +14,7 @@ public class Die
 	public Die()
 	{
 		this.isItARandomRoll=true;
-		this.roll(); // executes the roll method
+		//this.roll(); // executes the roll method
 	}
 
 	//-------------------------TP 1.1 changes--------------------------------------------------//
@@ -38,7 +35,7 @@ public class Die
 			this.isItARandomRoll=false;
 			this.programmedRoll = runTimeArgForProgrammedRollArray;
 			this.arrayIndex=0;
-			this.roll();
+			//this.roll();
 		}
 	}
 	//-------------------------TP 1.1 changes--------------------------------------------------//
@@ -48,42 +45,24 @@ public class Die
 	{
 		return this.lastRoll;
 	}
-	
-	
-	
-/* Anna Code:  Same logic, different syntax
- * public void roll() 
-	{
-		if (!loaded) {
-			lastRoll = (int) (Math.random() * 6 + 1);
-		} else if (loaded) {
-			loadedRoll();
-		}
-	}
-	
-	public void loadedRoll() {
-		lastRoll = loadedDieValues[loadedCounter];
-		
-		//if last value in array, start over; else go to next value
-		loadedCounter = (loadedCounter >= loadedDieValues.length) ? 0 : loadedCounter++;
-	}
- * 
- * 
- * 
- */
+
 
 	public void roll() // note how this changes Die's state, but doesn't return anything
 	{
-		if(isItARandomRoll == true)
+		if(isItARandomRoll)
 		{
 			this.lastRoll = (int) (Math.random() * 6 + 1);
 		}
 		//-------------------------TP 1.1 changes--------------------------------------------------//
-		else // if isItARandomRoll == false
+		else if (!isItARandomRoll)
 		{
-			       
+			loadedRoll();
+		}
+	}
+		
+		public void loadedRoll() {
 			this.lastRoll= this.programmedRoll[arrayIndex];
-			//System.out.println("Programmed roll's value: " + lastRoll);
+			System.out.println("Programmed roll's value: " + lastRoll);
 			
 			arrayIndex++;
 			
@@ -95,7 +74,7 @@ public class Die
 
 		
 		//-------------------------TP 1.1 changes--------------------------------------------------//
-	}
+	
 	
 	
 	
