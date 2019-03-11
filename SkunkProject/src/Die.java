@@ -17,7 +17,7 @@ public class Die
 	public Die()
 	{
 		this.isItARandomRoll=true;
-		this.roll(); // executes the roll method
+		//this.roll(); // executes the roll method
 	}
 
 	//-------------------------TP 1.1 changes--------------------------------------------------//
@@ -38,7 +38,7 @@ public class Die
 			this.isItARandomRoll=false;
 			this.programmedRoll = runTimeArgForProgrammedRollArray;
 			this.arrayIndex=0;
-			this.roll();
+			//this.roll();
 		}
 	}
 	//-------------------------TP 1.1 changes--------------------------------------------------//
