@@ -8,11 +8,32 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 public class DieTest {
+
 	@Rule
 	  public final ExpectedException exception = ExpectedException.none();
 	
 	@Test
-	//Test that preprogrammed Die object is working as expected
+	public void loadedDieTest() {
+		int[] progRoll = {1,2,6,5};
+		Die die1 = new Die (progRoll);
+		int[] dieTest = new int[4];
+
+		
+		for (int arrayIndex=progRoll.length-1; arrayIndex>=1; arrayIndex=arrayIndex -1) {
+			die1.roll();
+			dieTest[arrayIndex] = die1.getLastRoll();
+			System.out.println(dieTest[arrayIndex]);
+		}
+			
+		
+		String actual = Arrays.toString(dieTest);
+		String expected = Arrays.toString(new int[] {1,2,6,5});
+		
+		Assert.assertEquals(actual,expected);
+}
+  
+  @Test
+  //Test that preprogrammed Die object is working as expected
 	public void loadedDieTest() {
 		int[] progRoll = {1,2,6,5};
 		Die die1 = new Die (progRoll);
@@ -27,6 +48,7 @@ public class DieTest {
 				Arrays.toString(new int[] {1,2,6,5,1,2,6,5,1,2}), 
 				Arrays.toString(dieTest));
 	}
+	
 	
 	@Test
 	//test that the nullPointerException is thrown when an empty array is passed as a parameter to Die obj

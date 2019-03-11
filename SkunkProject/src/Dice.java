@@ -18,13 +18,7 @@ public class Dice
 	private int lastRoll;
 	private Die die1;
 	private Die die2;
-	
-	//-------------------------TP 1.1 changes--------------------------------------------------//
-	private int[] roll; // stores user input of preProgrammedDieRolls
-	private boolean isItARandomRoll = false; // controls alternative execution of the roll method
-	//-------------------------TP 1.1 changes--------------------------------------------------//
-	
-	
+
 
 	// Constructors (object initializers) also can be declared anywhere
 	// Convention: after instance fields/variables
