@@ -1,11 +1,10 @@
-import static org.junit.Assert.*;
-
+import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
-
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
 
 public class DieTest {
 
@@ -24,9 +23,11 @@ public class DieTest {
 			dieTest[i] = die1.getLastRoll();
 			System.out.println(dieTest[i]);
 		}
-		Assert.assertEquals(
-				Arrays.toString(new int[] {1,2,6,5,1,2,6,5,1,2}), 
-				Arrays.toString(dieTest));
+		
+		String expected = Arrays.toString(new int[] {1,2,6,5,1,2,6,5,1,2});
+		String actual = Arrays.toString(dieTest);
+		
+		Assert.assertEquals(expected,actual);
 	}
 	
 	@Test
@@ -44,19 +45,22 @@ public class DieTest {
 		int[] progRoll = {1,2,6,5};
 		Die die1 = new Die (progRoll);
 		int[] dieTest = new int[4];
-
+		int arrayIndex;
 		
-		for (int arrayIndex=progRoll.length-1; arrayIndex>=1; arrayIndex=arrayIndex -1) {
+		//for (int arrayIndex=progRoll.length-1; arrayIndex>=1; arrayIndex=arrayIndex -1) { // forloop for iterating the array backwards
+		
+		  for (arrayIndex=0; arrayIndex<dieTest.length; arrayIndex++) //forloop for iterating the array forwards
+		  {
 			die1.roll();
 			dieTest[arrayIndex] = die1.getLastRoll();
 			System.out.println(dieTest[arrayIndex]);
-		}
-			
-		
-		String actual = Arrays.toString(dieTest);
+		  }
+
+		String actual = Arrays.toString(dieTest );
 		String expected = Arrays.toString(new int[] {1,2,6,5});
 		
-		Assert.assertEquals(actual,expected);
+		//Assert.assertEquals(actual,expected);
+		assertEquals(expected,actual); // rewritten code 
 	}
 
 }

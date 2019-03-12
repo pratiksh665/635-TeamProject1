@@ -24,8 +24,8 @@ public class DiceTest
 	public void test_Init_PredictableDie()
 	{
 		dice.roll();
-		int value = dice.getLastRoll();
-		assertEquals(4, value);
+		int value = dice.getLastRoll();  // adds rollDie1's position1 + rollDie2's position1
+		assertEquals(2, value);
 	}
 
 	@Test
@@ -33,8 +33,8 @@ public class DiceTest
 	{
 		dice.roll();
 		dice.roll();
-		int value = dice.getLastRoll();
-		assertEquals(6, value);
+		int value = dice.getLastRoll();  // adds rollDie1's position2 + rollDie2's position2
+		assertEquals(4, value);
 	}
 
 	@Test
@@ -44,7 +44,7 @@ public class DiceTest
 		dice.roll();
 		dice.roll();
 		int value = dice.getLastRoll();
-		assertEquals(2, value);
+		assertEquals(6, value);  // adds rollDie1's position3 + rollDie2's position3
 	}
 
 	@Test
