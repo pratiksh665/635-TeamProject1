@@ -30,7 +30,6 @@ public class Dice
 
 		this.die1 = new Die();
 		this.die2 = new Die();
-		this.roll();
 	}
 
 	public Dice(Die die1, Die die2) // overloaded constructor
@@ -47,6 +46,16 @@ public class Dice
 		return this.lastRoll;
 	}
 
+	public int getDie1() {
+		return die1.getDie1();
+	}
+	
+	public int getDie2() {
+		return die2.getDie2();
+	}
+	
+	
+	
 	public void roll()
 	{
 		// roll each of die1, die2, sum their last rolls,
@@ -65,28 +74,45 @@ public class Dice
 	public String toString()
 	{
 		return "Dice with last roll: " + getLastRoll() + " => " + die1.getLastRoll() + " + " + die2.getLastRoll();
-
 	}
+	
+	
 
 	// static methods can go anywhere - but at end is standard
 
-	public static final int NUM_TRIALS = 360;
+//	public static final int NUM_TRIALS = 360;
 
-	public static void main(String[] args)
-	{
-		Dice dice1 = new Dice();
-		int doubleSkunkCount = 0;
+	//MOVED TO TURN CLASS
+//	public void playerRoll() {
+//		Dice dice = new Dice();
+//		
+//		dice.roll();
+//		if (die1.getLastRoll() == 1 || die2.getLastRoll() == 1) {
+//			
+//		}
+//		else if (dice.getLastRoll() == 2) {
+//			
+//		}
+//		else {
+//			
+//		}
+//	}
 
-		for (int i = 0; i < NUM_TRIALS; i++)
-		{
-			dice1.roll();
-			StdOut.println(dice1);
-			
-			if (dice1.getLastRoll() == 2)
-				doubleSkunkCount++;
-		}
-
-		StdOut.println("Actual count: " + doubleSkunkCount);
-		StdOut.println("Expected count: " + (NUM_TRIALS / 36.0));
-	}
+//	public static void main(String[] args)
+//	{
+//		Dice dice1 = new Dice();
+//		int doubleSkunkCount = 0;
+//
+//		for (int i = 0; i < NUM_TRIALS; i++)
+//		{
+//			dice1.roll();
+//			StdOut.println(dice1);
+//			
+//			if (dice1.getLastRoll() == 2)
+//				doubleSkunkCount++;
+//		}
+//
+//		StdOut.println("Actual count: " + doubleSkunkCount);
+//		StdOut.println("Expected count: " + (NUM_TRIALS / 36.0));
+//	}
 }

@@ -49,28 +49,15 @@ public class Die
 		return this.lastRoll;
 	}
 	
-	
-	
-/* Anna Code:  Same logic, different syntax
- * public void roll() 
-	{
-		if (!loaded) {
-			lastRoll = (int) (Math.random() * 6 + 1);
-		} else if (loaded) {
-			loadedRoll();
-		}
+	public int getDie1() {
+		return this.getLastRoll();
 	}
 	
-	public void loadedRoll() {
-		lastRoll = loadedDieValues[loadedCounter];
-		
-		//if last value in array, start over; else go to next value
-		loadedCounter = (loadedCounter >= loadedDieValues.length) ? 0 : loadedCounter++;
+	public int getDie2() {
+		return this.getLastRoll();
 	}
- * 
- * 
- * 
- */
+	
+
 
 	public void roll() // note how this changes Die's state, but doesn't return anything
 	{
