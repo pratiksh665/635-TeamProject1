@@ -10,6 +10,12 @@ public class Turn
 	{
 		dice = new Dice();
 	}
+	
+	public Turn(Dice dice) {
+		this.dice = dice;
+	}
+	
+
 
 	public void turnRoll()
 	{
