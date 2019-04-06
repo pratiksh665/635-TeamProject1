@@ -5,6 +5,7 @@ public class Turn
 	private int turnScore;
 	private Dice dice; // Turn talks to Dice
 	private boolean isSkunk;
+	private boolean isDoubleSkunk;
 
 	public Turn()
 	{
@@ -30,13 +31,13 @@ public class Turn
 		else if (dice.getLastRoll() == 2)
 		{
 			turnScore = 0;
-			isSkunk = true;
+			isDoubleSkunk = true;
 			// totalScore = 0;
 		}
 
 		else
 		{
-			turnScore += dice.getLastRoll();
+			turnScore += getDiceValue();
 			isSkunk = false;
 		}
 	}
@@ -77,6 +78,10 @@ public class Turn
 		return isSkunk;
 	}
 
+	public boolean isDoubleSkunk() {
+		return isDoubleSkunk;
+	}
+	
 	public int getDie1Value()
 	{
 		return dice.getDie1();

@@ -58,7 +58,7 @@ public class Die
 	{
 		if (isItARandomRoll == true)
 		{
-			this.lastRoll = (int) (Math.random() * 6 + 1);
+			this.lastRoll = (int) (Math.random() * 40 + 1);
 		}
 		// -------------------------TP 1.1
 		// changes--------------------------------------------------//
